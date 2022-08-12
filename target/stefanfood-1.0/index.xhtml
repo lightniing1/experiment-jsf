@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastro Fornecedor</title>
+    </h:head>
+    <h:body>
+        <h3>Lista Fornecedores</h3>
+        <h:form id="lista_fornecedores">
+            <h:dataTable value="#{fornecedorBean.fornecedores}" id="fornecedores_datatable" var="fornecedor" rows="5">
+                <h:column>
+                    <f:facet name = "header">Nome</f:facet>
+                    <p:inputText id="nome" value="#{fornecedor.nome}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">CNPJ</f:facet>
+                    <p:inputText id="cnpj" value="#{fornecedor.cnpj}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Endereco</f:facet>
+                    <p:inputText id="endereco" value="#{fornecedor.endereco}"/>
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Excluir" action="#{fornecedorBean.excluirFornecedor(fornecedor)}" />
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Atualizar" action="#{fornecedorBean.atualizarFornecedor(fornecedor)}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        <h:form id="fornecedores">
+             <p class="text-4xl w-10">Cadastro Fornecedor</p>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="nome" value="Nome" />
+                <p:inputText id="nome" value="#{fornecedorBean.fornecedor.nome}"/>
+                <p:outputLabel for="cnpj" value="CNPJ" />
+                <p:inputText id="cnpj" value="#{fornecedorBean.fornecedor.cnpj}"/>
+                <p:outputLabel for="endereco" value="Endereco" />
+                <p:inputText id="endereco" value="#{fornecedorBean.fornecedor.endereco}"/>
+                <h:commandButton value="Salvar" action='#{fornecedorBean.salvaFornecedor}' />
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

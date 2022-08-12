@@ -1,0 +1,4 @@
+com\stefanini\jsf\stefafood\util\HibernateUtil.class
+com\stefanini\jsf\stefanfood\model\Fornecedor.class
+com\stefanini\jsf\stefanfood\bean\FornecedorBean.class
+com\stefanini\jsf\stefanfood\dao\FornecedorDAO.class
